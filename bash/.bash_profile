@@ -1,5 +1,7 @@
 HOST_NAME=Renan
 
+source ~/.nvm/nvm.sh
+
 shopt -s autocd
 shopt -s histappend
 
@@ -8,6 +10,9 @@ export PATH="$PATH:/opt/yarn-[version]/bin"
 
 export HISTSIZE=5000
 export HISTFILESIZE=10000
+
+# To open fzf on my directory 
+bind -x '"\C-f": tmux-sessionizer'
 
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
