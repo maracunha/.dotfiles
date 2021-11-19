@@ -11,6 +11,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ayu-theme/ayu-vim'
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 
 " This was from the colorscheme section
