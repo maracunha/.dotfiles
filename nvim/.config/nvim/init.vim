@@ -1,3 +1,12 @@
+" Ignore files
+set wildignore+=*.pyc
+set wildignore+=*_build/*
+set wildignore+=**/coverage/*
+set wildignore=**/node_modules/*
+set wildignore+=**/android/*
+set wildignore+=**/ios/*
+set wildignore+=**/.git/*
+
 set scrolloff=8
 set number
 set relativenumber
@@ -8,10 +17,17 @@ set smartindent
 
 call plug#begin('~/.vim/plugged')
 
+" Plebvim lsp Plugins
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
+
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
 Plug 'ayu-theme/ayu-vim'
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
@@ -21,10 +37,11 @@ set termguicolors     " enable true colors support
 let ayucolor="dark"   " for dark version of theme
 colorscheme ayu
 
-
 " Our remaps
 let mapleader = " "
-nnoremap <leader>pv :Vex<CR>
+nnoremap <silent> <C-f> :silent !tmux neww tmux-sessionizer<CR>   
+nnoremap <leader>pv :Ex<CR>
+nnoremap <leader>wv :Vex<CR>
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
 nnoremap <C-p> :GFiles<CR>
 nnoremap <leader>pf :Files<CR>
