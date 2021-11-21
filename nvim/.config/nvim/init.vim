@@ -30,11 +30,13 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'dense-analysis/ale'
+Plug 'kamykn/spelunker.vim'
 call plug#end()
 
 " This was from the colorscheme section
 set termguicolors     " enable true colors support
-let ayucolor="dark"   " for dark version of theme
+let ayucolor="mirage"   " for dark version of theme
 colorscheme ayu
 
 " Our remaps

@@ -1,8 +1,13 @@
-#!/usr/bin/env zsh
-pushd $DOTFILES
-for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
+#!/usr/bin/env bash
+
+pushd $HOME/.dotfiles
+
+STOW_FOLDERS="nvim tmux usr bash"
+
+for folder in $STOW_FOLDERS
 do
     echo "Removing $folder"
     stow -D $folder
 done
 popd
+
