@@ -2,7 +2,7 @@
 
 pushd $HOME/.dotfiles
 
-STOW_FOLDERS="nvim tmux usr bash"
+STOW_FOLDERS="nvim tmux usr bash git git"
 
 for folder in $STOW_FOLDERS
 do
