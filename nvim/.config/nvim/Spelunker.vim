@@ -12,7 +12,7 @@ let g:enable_spelunker_vim_on_readonly = 0
 let g:spelunker_target_min_char_len = 4
 
 " Max amount of word suggestions. (default: 15)
-let g:spelunker_max_suggest_words = 15
+let g:spelunker_max_suggest_words = 10
 
 " Max amount of highlighted words in buffer. (default: 100)
 let g:spelunker_max_hi_words_each_buf = 100
@@ -22,7 +22,7 @@ let g:spelunker_max_hi_words_each_buf = 100
 " may take a bit of time on large files.
 " 2: Spellcheck displayed words in buffer. Fast and dynamic. The waiting time
 " depens on the setting of CursorHold `set updatetime=1000`.
-let g:spelunker_check_type = 1
+let g:spelunker_check_type = 2
 
 " Highlight type: (default: 1)
 " 1: Highlight all types (SpellBad, SpellCap, SpellRare, SpellLocal).
@@ -32,14 +32,14 @@ let g:spelunker_highlight_type = 1
 
 " Option to disable word checking.
 " Disable URI checking. (default: 0)
-let g:spelunker_disable_uri_checking = 1
+let g:spelunker_disable_uri_checking = 0
 
 " Disable email-like words checking. (default: 0)
-let g:spelunker_disable_email_checking = 1
+let g:spelunker_disable_email_checking = 0
 
 " Disable account name checking, e.g. @foobar, foobar@. (default: 0)
 " NOTE: Spell checking is also disabled for JAVA annotations.
-let g:spelunker_disable_account_name_checking = 1
+let g:spelunker_disable_account_name_checking = 0
 
 " Disable acronym checking. (default: 0)
 let g:spelunker_disable_acronym_checking = 1
@@ -48,7 +48,7 @@ let g:spelunker_disable_acronym_checking = 1
 let g:spelunker_disable_backquoted_checking = 1
 
 " Disable default autogroup. (default: 0)
-let g:spelunker_disable_auto_group = 1
+let g:spelunker_disable_auto_group = 0
 
 " Create own custom autogroup to enable spelunker.vim for specific filetypes.
 augroup spelunker
