@@ -57,6 +57,10 @@ Plug 'nvim-treesitter/playground'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 
+" HARPOON!!
+Plug 'ThePrimeagen/harpoon'
+Plug 'mhinz/vim-rfc'
+
 call plug#end()
 
 " My remaps
@@ -81,6 +85,17 @@ nnoremap <leader>gll :let g:_search_term = expand("%")<CR><bar>:Gclog -- %<CR>:c
 nnoremap <leader>gln :cnext<CR>:call search(_search_term)<CR>
 nnoremap <leader>glp :cprev<CR>:call search(_search_term)<CR>
 
+" greatest remap ever
+xnoremap <leader>p "_dP
+
+" next greatest remap ever : asbjornHaland
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>Y gg"+yG  " copy hole file
+
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
 " that one is mine
 nnoremap <leader>vfa :silent :EslintFixAll<CR>
 
@@ -89,3 +104,7 @@ lua require("maracunha.lsp")
 lua require("maracunha.cmd")
 lua require("maracunha.treesitter")
 lua require("maracunha.spellsitter")
+lua require("maracunha.harpoon")
+
+" disable python only using python3
+let g:loaded_python_provider = 0
