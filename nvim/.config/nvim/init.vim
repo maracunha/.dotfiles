@@ -31,6 +31,9 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'hrsh7th/cmp-nvim-lua'
 
+" theme
+Plug 'morhetz/gruvbox'
+
 " snippets
 Plug 'L3MON4D3/LuaSnip'
 Plug 'rafamadriz/friendly-snippets'
@@ -56,6 +59,8 @@ Plug 'nvim-treesitter/playground'
 " A git commit browser
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
 
 " HARPOON!!
 Plug 'ThePrimeagen/harpoon'

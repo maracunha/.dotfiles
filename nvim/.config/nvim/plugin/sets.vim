@@ -36,6 +36,7 @@ set guifont="monospace:h17"
 
 " This was from the colorscheme section
  set termguicolors       " enable true colors support
- let ayucolor="mirage"   " for dark version of theme
- colorscheme ayu
- 
+" let ayucolor="mirage"   " for dark version of theme
+" colorscheme ayu
+colorscheme gruvbox
+set background=dark
