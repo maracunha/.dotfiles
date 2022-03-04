@@ -78,7 +78,6 @@ nnoremap <leader>x :!chmod +x %<CR>
 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
-vnoremap <leader>y "+y
 
 " not know exactly what it does
 nnoremap <leader>vwh :h <C-R>=expand("<cword>")<CR><CR>
@@ -93,10 +92,17 @@ nnoremap <leader>glp :cprev<CR>:call search(_search_term)<CR>
 " greatest remap ever
 xnoremap <leader>p "_dP
 
-" next greatest remap ever : asbjornHaland
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
-nnoremap <leader>Y gg"+yG  " copy hole file
+nnoremap Y yg$
+
+" center cursor on quick find
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+"copy hole file
+nnoremap <leader>Y gg"+yG  
 
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
