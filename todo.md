@@ -1,25 +1,12 @@
+# Studies
+change nvm to n
 
-# chande nvm to n
-
+# Git
 allways on git 
 rebase
 squach
 
 git rebase <current Tag>
-
-# Stow
-stow <directory>
-stow -D <directory>
-
-# Tmux
-tmux kill-server
-tmux split-window -h
-tmux neww
-tmux split-window -p 22 -h bash
-tmux new-session -s foo
-tmux list-server
-tmux new-session -s "static-ticket" -d -c "$HOME/dev/hi/static-ticket" ns
-tmux switch-client -t "foobar"
 
 # Docker
 docker container run myImage — Create a new container and start it. You’ll probably want some flags here.
@@ -37,6 +24,7 @@ logs — Print logs.
 stop — Gracefully stop running container.
 kill —Stop main process in container abruptly.
 rm— Delete a stopped container.
+
 ## Images
 Use docker image myCommand
 

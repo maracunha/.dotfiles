@@ -102,7 +102,7 @@ nnoremap N Nzzzv
 nnoremap J mzJ`z
 
 "copy hole file
-nnoremap <leader>Y gg"+yG  
+nnoremap <leader>Y gg"+yG
 
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
