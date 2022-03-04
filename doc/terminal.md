@@ -1,9 +1,16 @@
+# Terminal items
 
-# Stow
+## Stow
 stow <directory>
 stow -D <directory>
 
-# Tmux
+On a root directory of .dotfiles and run to stow all directories
+
+```shell
+install
+```
+
+## Tmux
 tmux kill-server
 tmux split-window -h
 tmux neww
