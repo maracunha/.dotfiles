@@ -1,0 +1,21 @@
+#!/bin/bash
+
+branch=$(git symbolic-ref --short HEAD)
+commit=$(git log -1 --pretty=%B)
+pushResult=$(git push --porcelain)
+currentRepository=$(basename -s .git `git config --get remote.origin.url`)
+
+if [[ ${pushResult} == *"up to date"* ]]; then
+    echo "GIT is up to date"
+  elif [[ ${pushResult} == *"rejected"* ]]; then
+    echo "Failed to push, see git logs..."
+  elif [[ ${pushResult} == *"Done"* ]]; then
+      CURL_OUTPUT=`curl -w -X POST -H "Content-Type: application/json" -d "{ \"cards\": [ { \"header\": { \"title\": \"Push Realizado!\" }, \"sections\": [ { \"header\": \"Repositório\", \"widgets\": [{ \"textParagraph\": { \"text\": \"$currentRepository\" } }] }, { \"header\": \"Branch\", \"widgets\": [ { \"textParagraph\": { \"text\": \"$branch\" } } ] }, { \"header\": \"Mensagem\", \"widgets\": [ { \"textParagraph\": { \"text\": \"$commit\" } } ] } ] } ] }" "https://chat.googleapis.com/v1/spaces/_uToagAAAAE/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=3KQJoMG1UQ4Ave8yAYzkwUJHTTLNe5NV0l8D9w6hpeQ%3D" 2> /dev/null` || CURL_RETURN_CODE=$?
+    if [[ ${CURL_RETURN_CODE} -ne 0 ]]; then  
+      echo "Curl returned $CURL_RETURN_CODE"
+    elif [[ ${CURL_OUTPUT} != *"\"displayName\": \"Push Notifier\""* ]]; then
+      echo "Curl returned: $CURL_OUTPUT"
+    fi
+else
+  echo "Error to push..."
+fi
