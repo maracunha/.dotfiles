@@ -27,4 +27,5 @@
 [log]
   decorate = full
   abbrevCommit = true
-  
+[init]
+  defaultBranch = main

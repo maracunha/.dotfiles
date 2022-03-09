@@ -1,5 +1,8 @@
 set path+=**
 
+" open the result in a new buffer in vertical viewm
+" command Exec set splitright | vnew | set filetype=sh | read !sh #
+
 " I don,t know if I need this
 " Nice menu when typing `:find *.py`
 set wildmode=longest,list,full
@@ -58,8 +61,8 @@ Plug 'nvim-treesitter/playground'
 
 " A git commit browser
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
 Plug 'junegunn/gv.vim'
-Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 
 " HARPOON!!
@@ -116,6 +119,6 @@ lua require("maracunha.cmd")
 lua require("maracunha.treesitter")
 lua require("maracunha.spellsitter")
 lua require("maracunha.harpoon")
-
+=
 " disable python only using python3
 let g:loaded_python_provider = 0
