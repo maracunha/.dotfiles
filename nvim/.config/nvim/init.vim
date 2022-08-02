@@ -69,6 +69,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'ThePrimeagen/harpoon'
 Plug 'mhinz/vim-rfc'
 
+" show result of code
+Plug 'metakirby5/codi.vim'
+
 call plug#end()
 
 " My remaps

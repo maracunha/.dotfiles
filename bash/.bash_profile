@@ -6,7 +6,9 @@ shopt -s autocd
 shopt -s histappend
 
 export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/.cargo/env
 export PATH="$PATH:/opt/yarn-[version]/bin"
+
 
 export HISTSIZE=5000
 export HISTFILESIZE=10000
@@ -79,3 +81,4 @@ export NVM_DIR="$HOME/.nvm"
 
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
+. "$HOME/.cargo/env"
