@@ -116,12 +116,6 @@ vnoremap <leader>d "_d
 " that one is mine
 nnoremap <leader>vfa :silent :EslintFixAll<CR>
 
-" requires my configs made in lua
-lua require("maracunha.lsp")
-lua require("maracunha.cmd")
-lua require("maracunha.treesitter")
-lua require("maracunha.spellsitter")
-lua require("maracunha.harpoon")
 =
 " disable python only using python3
 let g:loaded_python_provider = 0

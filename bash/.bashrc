@@ -1,23 +1,17 @@
 HOST_NAME=Renan
 
-source ~/.nvm/nvm.sh
-
 shopt -s autocd
 shopt -s histappend
 
-export PATH=$PATH:$HOME/bin
-export PATH=$PATH:$HOME/.cargo/env
-export PATH="$PATH:/opt/yarn-[version]/bin"
-
-
-export HISTSIZE=5000
-export HISTFILESIZE=10000
+HISTCONTROL=ignoreboth
+HISTSIZE=5000
+HISTFILESIZE=10000
 
 # To open fzf on my directory 
 bind -x '"\C-f": tmux-sessionizer'
 
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
+#bind '"\e[A": history-search-backward'
+#bind '"\e[B": history-search-forward'
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
@@ -36,7 +30,7 @@ print_before_the_prompt () {
     dir=$PWD
     home=$HOME
     dir=${dir/"$HOME"/"~"}
-    printf "\n $txtred%s: $bldpur%s $txtgrn%s\n$txtrst" "$HOST_NAME" "$dir" "$(vcprompt)"
+    printf "\n $txtred%s: $bldpur%s $txtgrn%s\n$txtrst" "$HOST_NAME" "$dir"
 }
 
 PROMPT_COMMAND=print_before_the_prompt
@@ -75,10 +69,44 @@ alias chrome="open -a 'Google Chrome'"
 alias gss='git status -s'
 alias gs='echo ""; echo "*********************************************"; echo -e "   DO NOT FORGET TO PULL BEFORE COMMITTING"; echo "*********************************************"; echo ""; git status'
 
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+# Default itens from bash
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
-. "$HOME/.cargo/env"
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
