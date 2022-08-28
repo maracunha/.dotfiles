@@ -11,9 +11,12 @@ configs.setup {
     enable = true,
   },
   highlight = {
+    -- use_languagetree = true,
     enable = true, -- false will disable the whole extension
+    -- disable = { "css", "html" }, -- list of language that will be disabled
+    -- disable = { "css", "markdown" }, -- list of language that will be disabled
     disable = { "" }, -- list of language that will be disabled
-    additional_vim_regex_highlighting = false,
+    -- additional_vim_regex_highlighting = true,
   },
   indent = { enable = true, disable = { "yaml" } },
   context_commentstring = {
