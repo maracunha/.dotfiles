@@ -10,6 +10,9 @@ return require("packer").startup(function()
     use("nvim-lua/popup.nvim")
     use("nvim-telescope/telescope.nvim")
 
+    -- for formatters and linters
+    use("jose-elias-alvarez/null-ls.nvim")
+
     -- All the things
     use("neovim/nvim-lspconfig")
     use("hrsh7th/cmp-nvim-lsp")
@@ -39,6 +42,9 @@ return require("packer").startup(function()
 
     use("nvim-treesitter/playground")
     use("romgrk/nvim-treesitter-context")
+
+    -- Optional but recommended
+    -- 'nvim-treesitter/nvim-treesitter',
     use("lewis6991/spellsitter.nvim")
 
     use("mfussenegger/nvim-dap")
