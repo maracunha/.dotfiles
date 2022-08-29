@@ -16,8 +16,10 @@ HISTFILESIZE=10000
 # To open fzf on my directory 
 bind -x '"\C-f": tmux-sessionizer'
 
-#bind '"\e[A": history-search-backward'
-#bind '"\e[B": history-search-forward'
+# To fill the last command from history
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced

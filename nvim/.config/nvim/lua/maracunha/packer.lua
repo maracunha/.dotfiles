@@ -10,11 +10,7 @@ return require("packer").startup(function()
     use("nvim-lua/popup.nvim")
     use("nvim-telescope/telescope.nvim")
 
-    -- for formatters and linters
-    use("jose-elias-alvarez/null-ls.nvim")
-
     -- All the things
-    use("neovim/nvim-lspconfig")
     use("hrsh7th/cmp-nvim-lsp")
     use("hrsh7th/cmp-buffer")
     use("hrsh7th/nvim-cmp")
@@ -25,6 +21,12 @@ return require("packer").startup(function()
     use("simrat39/symbols-outline.nvim")
     use("L3MON4D3/LuaSnip")
     use("saadparwaiz1/cmp_luasnip")
+
+    -- LSP
+    use "neovim/nvim-lspconfig" -- enable LSP
+    use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
+    use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
     -- Primeagen doesn"t create lodash
     use("ThePrimeagen/git-worktree.nvim")
@@ -43,8 +45,6 @@ return require("packer").startup(function()
     use("nvim-treesitter/playground")
     use("romgrk/nvim-treesitter-context")
 
-    -- Optional but recommended
-    -- 'nvim-treesitter/nvim-treesitter',
     use("lewis6991/spellsitter.nvim")
 
     use("mfussenegger/nvim-dap")

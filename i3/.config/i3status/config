@@ -14,7 +14,6 @@ general {
 order += "disk /"
 order += "wireless _first_"
 order += "battery all"
-order += "cpu_temperature"
 order += "load"
 order += "tztime local"
 
@@ -25,11 +24,6 @@ wireless _first_ {
 
 battery all {
         format = "%status %percentage %remaining"
-}
-
-cpu_temperature {
-    format = "T: %degrees °C"
-        path = "/sys/devices/platform/coretemp.0/temp1_input"
 }
 
 tztime local {
