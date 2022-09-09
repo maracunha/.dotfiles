@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+export STOW_FOLDERS="bin,nvim,tmux,ubuntu,i3,bash"
+
+startMongo() {
+    sudo systemctl start mongod
+    sudo systemctl enable mongod
+}
+
+increaseWatchers() {
+    sudo sysctl fs.inotify.max_user_watches=65536
+    sudo sysctl -p
+}
+
+addToPath() {
+    if [[ "$PATH" != *"$1"* ]]; then
+        export PATH=$PATH:$1
+    fi
+}
+
+addToPathFront() {
+    if [[ "$PATH" != *"$1"* ]]; then
+        export PATH=$1:$PATH
+    fi
+}
+
+# $1: up or down
+# $2: for now, just todo the up winh correct contoiner
+# need to improve this part of comand
+sdc() {
+    pushd  ~/work/voicebunny2/master/
+    if [[ -z "$2" ]]; then
+        sudo docker-compose $1
+        return
+    fi
+
+    sudo docker-compose $1 -d wagnerr burrton
+    popd
+}
+
+# bye bye
+fallow() {
+    cd  ~/work/voicebunny2/master/
+    sudo docker-compose down
+    tmux kill-session
+    shutdown
+}
+
