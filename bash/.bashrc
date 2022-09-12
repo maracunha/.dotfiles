@@ -15,6 +15,8 @@ source $PERSONAL/env
 #    source $i
 #done
 
+addToPathFront $HOME/.local/bin
+
 HISTCONTROL=ignoredups
 HISTCONTROL=ignoreboth
 HISTSIZE=5000

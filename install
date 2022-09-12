@@ -2,7 +2,7 @@
 
 pushd $HOME/.dotfiles
 
-STOW_FOLDERS="nvim tmux usr bash git"
+STOW_FOLDERS="nvim tmux bin bash git i3 ubuntu"
 
 for folder in $STOW_FOLDERS
 do
@@ -10,3 +10,4 @@ do
     stow $folder
 done
 popd
+
