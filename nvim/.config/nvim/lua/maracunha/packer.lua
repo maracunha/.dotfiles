@@ -34,6 +34,9 @@ return require("packer").startup(function()
 
     use("mbbill/undotree")
 
+    -- Git stuffs 
+    use("tpope/vim-fugitive")
+
     -- Colorscheme section
     use("gruvbox-community/gruvbox")
     use("folke/tokyonight.nvim")
