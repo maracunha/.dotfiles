@@ -46,3 +46,11 @@ fallow() {
     shutdown
 }
 
+
+# launching vpn
+start-vpn() {
+    pushd /etc/openvpn/client
+    sudo openvpn ip-172-18-174-13_openvpn_remote_access_l3.ovpn
+    popd
+}
+

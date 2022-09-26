@@ -2,7 +2,7 @@
 
 ## git log
 To find a commit with blabla contained
-$ git log -S blabla --oneline
+git log -S blabla --oneline
 
 ## git work tree
 * clone exemplo
@@ -26,4 +26,23 @@ $ git worktree remove ../temp
 
 ### List remote Git branches by author sorted by committer date:
 git for-each-ref --format='%(committerdate) %09 %(authorname) %09 %(refname)' --sort=committerdate
+
+### To save a stash with a message:
+git stash push -m "my_stash_name"
+
+# To list stashes:
+git stash list
+
+# All the stashes are stored in a stack.
+# To apply and remove the nth stash:
+git stash pop stash@{n}
+
+# To apply and remove a stash by name:
+git stash pop stash^{/my_stash_name}
+
+# To apply the nth stash:
+git stash apply stash@{n}
+
+# To apply a stash by name:
+git stash apply stash^{/my_stash_name}
 

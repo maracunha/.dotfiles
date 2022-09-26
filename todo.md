@@ -19,3 +19,5 @@ squach
 
 git rebase <current Tag>
 
+make it executable
+chmod u+x

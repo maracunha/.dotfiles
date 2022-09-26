@@ -13,9 +13,17 @@ general {
 
 order += "disk /"
 order += "wireless _first_"
+order += "path_exists VPN"
+order += "run_watch VPN"
 order += "battery all"
 order += "load"
 order += "tztime local"
+
+path_exists VPN {
+     # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+     path = "/proc/sys/net/ipv4/conf/tun0"
+    format = "%title"
+}
 
 wireless _first_ {
         format_up = "W: (%quality at %essid) %ip"
@@ -37,3 +45,4 @@ load {
 disk "/" {
         format = "%avail"
 }
+
