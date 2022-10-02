@@ -1,0 +1,11 @@
+#!/bin/sh
+intern=eDP-1
+extern=HDMI-1-1
+
+if xrandr | grep "$extern disconnected"; then
+    xrandr --output "$extern" --off --output "$intern" --scale 0.7x0.7
+else
+    xrandr --output "$intern" --auto --output "$extern" --auto
+    #xrandr --output "$intern" --off --output "$extern" --scale 0.7x0.7
+fi
+

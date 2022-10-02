@@ -10,10 +10,13 @@ shopt -s histappend
 shopt -s checkwinsize
 
 PERSONAL=$XDG_CONFIG_HOME/personal
+BUNNY=$XDG_CONFIG_HOME/bunny
+
 source $PERSONAL/env
 #for i in `find -L $PERSONAL`; do
 #    source $i
 #done
+source $BUNNY/env
 
 addToPathFront $HOME/.local/bin
 
@@ -68,6 +71,7 @@ alias ll="ls -al" # List all files in current directory in long list format
 alias o="open ." # Open the current directory in Finder
 alias npm-flush='rm -rf ./node_modules && rm package-lock.json && npm i' # Clean npm modules and install again
 alias npm-global='npm list -g --depth 0' # Show all packages installed globally
+alias tkk= 'tmux kill-session'
 
 # ----------------------
 # Git Aliases

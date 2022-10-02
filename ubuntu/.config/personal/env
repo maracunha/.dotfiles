@@ -24,33 +24,11 @@ addToPathFront() {
     fi
 }
 
-# $1: up or down
-# $2: for now, just todo the up winh correct contoiner
-# need to improve this part of comand
-sdc() {
-    pushd  ~/work/voicebunny2/master/
-    if [[ -z "$2" ]]; then
-        sudo docker-compose $1
-        return
-    fi
-
-    sudo docker-compose $1 -d wagnerr burrton
-    popd
-}
-
 # bye bye
 fallow() {
-    cd  ~/work/voicebunny2/master/
-    sudo docker-compose down
-    tmux kill-session
-    shutdown
-}
-
-
-# launching vpn
-start-vpn() {
-    pushd /etc/openvpn/client
-    sudo openvpn ip-172-18-174-13_openvpn_remote_access_l3.ovpn
-    popd
+  cd  ~/work/voicebunny2/master/
+  sudo docker-compose down
+  tmux kill-session
+  shutdown
 }
 
