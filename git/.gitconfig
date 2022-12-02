@@ -1,6 +1,8 @@
 [user]
   name = Renan Marangon
   email = maracunha@gmail.com
+[core]
+	editor = nvim
 [diff]
   indentHeuristic = true
   submodule = log

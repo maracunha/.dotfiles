@@ -8,6 +8,12 @@ git log -S blabla --oneline
 * clone exemplo
 $ git clone --bare Hiplatform@vs-ssh.visualstudio.com:v3/Hiplatform/DT/static-ticket static-ticket
 
+That is ta update from master
+Only `git rebase master` will try see the local master not origin.
+```bash
+git rebase origin/master
+```
+
 
 ### Add remote tracking
 In the git config (simply repo/config in the case of a bare)

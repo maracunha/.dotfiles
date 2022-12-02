@@ -36,6 +36,15 @@ return require("packer").startup(function()
 
     -- Git stuffs 
     use("tpope/vim-fugitive")
+    use {
+    'pwntester/octo.nvim',
+    requires = {
+      'kyazdani42/nvim-web-devicons',
+    },
+    config = function ()
+      require"octo".setup()
+    end
+    }
 
     -- Colorscheme section
     use("gruvbox-community/gruvbox")
