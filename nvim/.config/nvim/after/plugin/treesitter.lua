@@ -4,8 +4,15 @@ if not status_ok then
 end
 
 configs.setup {
-  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  -- A list of parser names, or "all"
+  ensure_installed = { "help", "javascript", "typescript", "c", "lua", "rust" },
+
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
+
+  -- Automatically install missing parsers when entering buffer
+  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+  auto_install = true,
+
   ignore_install = { "" }, -- List of parsers to ignore installing
   autopairs = {
     enable = true,
@@ -15,15 +22,7 @@ configs.setup {
     enable = true, -- false will disable the whole extension
     -- disable = { "css", "html" }, -- list of language that will be disabled
     -- disable = { "css", "markdown" }, -- list of language that will be disabled
-    disable = { "" }, -- list of language that will be disabled
-    -- additional_vim_regex_highlighting = true,
+    -- disable = { "" }, -- list of language that will be disabled
+    additional_vim_regex_highlighting = true,
   },
-  indent = { enable = true, disable = { "yaml" } },
-  context_commentstring = {
-    enable = true,
-    enable_autocmd = false,
-  },
-  incremental_selection = { enable = true },  -- this two came from ThePrimeagen
-  textobjects = { enable = true },
 }
-

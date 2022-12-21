@@ -13,19 +13,13 @@ local servers = {
   "cssmodules_ls",
   "emmet_ls",
   "html",
-  "jdtls",
   "jsonls",
-  "solc",
-  "solidity_ls",
   "sumneko_lua",
-  "tflint",
   "tsserver",
   "pyright",
   "yamlls",
   "bashls",
-  "clangd",
   "rust_analyzer",
-  "lemminx"
 }
 
 local settings = {
