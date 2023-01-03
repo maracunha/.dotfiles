@@ -109,6 +109,8 @@ require("lspconfig").solang.setup(config())
 
 require("lspconfig").cssls.setup(config())
 
+require('lspconfig').html.setup(config())
+
 require("lspconfig").gopls.setup(config({
   cmd = { "gopls", "serve" },
   settings = {
