@@ -10,15 +10,14 @@ shopt -s histappend
 shopt -s checkwinsize
 
 PERSONAL=$XDG_CONFIG_HOME/personal
-BUNNY=$XDG_CONFIG_HOME/bunny
 
 source $PERSONAL/env
 #for i in `find -L $PERSONAL`; do
 #    source $i
 #done
-source $BUNNY/env
 
 addToPathFront $HOME/.local/bin
+addToPathFront $HOME/.local/scripts
 
 HISTCONTROL=ignoredups
 HISTCONTROL=ignoreboth
@@ -92,8 +91,6 @@ alias gs='echo ""; echo "*********************************************"; echo -e
 
 # Default itens from bash
 
-
-
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -122,10 +119,4 @@ fi
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 alias luamake=/home/renan/personal/sumneko/3rd/luamake/luamake
-
-#node things
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH=~/.local/.npm-global/bin:$PATH
