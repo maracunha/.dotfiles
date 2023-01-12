@@ -52,3 +52,8 @@ git stash apply stash@{n}
 # To apply a stash by name:
 git stash apply stash^{/my_stash_name}
 
+# Switch remote to SSH (i.e .dotfiles)
+```bash
+git remote rm origin
+git remote add origin git@github.com:maracunha/.dotfiles.git
+```
