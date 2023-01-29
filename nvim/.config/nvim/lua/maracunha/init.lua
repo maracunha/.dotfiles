@@ -3,7 +3,7 @@ require("maracunha.packer")
 require("maracunha.cmd")
 
 local augroup = vim.api.nvim_create_augroup
-MaracunhaGroup = augroup('Maracunha', {})
+local MaracunhaGroup = augroup('Maracunha', {})
 
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
@@ -23,3 +23,12 @@ autocmd('TextYankPost', {
         })
     end,
 })
+
+autocmd({"BufWritePre"}, {
+    group = MaracunhaGroup,
+    pattern = "*",
+    command = [[%s/\s\+$//e]],
+})
+
+
+vim.g.netrw_winsize = 25
