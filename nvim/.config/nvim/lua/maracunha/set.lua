@@ -1,24 +1,3 @@
--- set number
--- set nohlsearch
--- set hidden
--- set noerrorbells
-
---"keep history
---set nowrap
---set noswapfile
---set nobackup
-
---set noshowmode
---set spell spelllang=en_us,pt_br
---set spellfile=$HOME/.config/nvim/spell/en.utf-8.add
-
--- set completeopt=menu,menuone,noselect
--- let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
-
----- set cursorline
--- set guifont="monospace:h17"
-
-
 vim.opt.guicursor = ""
 
 vim.opt.nu = true
@@ -49,16 +28,7 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
--- Give more space for displaying messages.
-vim.opt.cmdheight = 1
-
 -- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
--- delays and poor user experience.
 vim.opt.updatetime = 50
 
--- Don't pass messages to |ins-completion-menu|.
-vim.opt.shortmess:append("c")
-
 vim.opt.colorcolumn = "80"
-
-vim.g.mapleader = " "

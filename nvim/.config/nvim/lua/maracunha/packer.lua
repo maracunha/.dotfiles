@@ -1,67 +1,55 @@
-return require("packer").startup(function()
-    use("wbthomason/packer.nvim")
-    use("sbdchd/neoformat")
+-- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
-    -- Simple plugins can be specified as strings
-    use("TimUntersberger/neogit")
+-- Only required if you have packer configured as `opt`
+vim.cmd.packadd('packer.nvim')
 
-    -- TJ created lodash of neovim
-    use("nvim-lua/plenary.nvim")
-    use("nvim-lua/popup.nvim")
-    use("nvim-telescope/telescope.nvim")
+return require('packer').startup(function(use)
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
 
-    -- All the things
-    use("hrsh7th/cmp-nvim-lsp")
-    use("hrsh7th/cmp-buffer")
-    use("hrsh7th/nvim-cmp")
-    use("tzachar/cmp-tabnine", { run = "./install.sh" })
-    use("onsails/lspkind-nvim")
-    use("nvim-lua/lsp_extensions.nvim")
-    use("glepnir/lspsaga.nvim")
-    use("simrat39/symbols-outline.nvim")
-    use("L3MON4D3/LuaSnip")
-    use("saadparwaiz1/cmp_luasnip")
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    -- or                            , branch = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
 
-    -- LSP
-    use "neovim/nvim-lspconfig" -- enable LSP
-    use "williamboman/mason.nvim"
-    use "williamboman/mason-lspconfig.nvim"
-    use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-
-    -- Primeagen doesn"t create lodash
-    use("ThePrimeagen/git-worktree.nvim")
-    use("ThePrimeagen/harpoon")
-
-    use("mbbill/undotree")
-
-    -- Git stuffs 
-    use("tpope/vim-fugitive")
-    use {
-    'pwntester/octo.nvim',
-    requires = {
-      'kyazdani42/nvim-web-devicons',
-    },
-    config = function ()
-      require"octo".setup()
+  use({
+    'rose-pine/neovim',
+    as = 'rose-pine',
+    config = function()
+      vim.cmd('colorscheme rose-pine')
     end
+  })
+
+  use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
+  use('nvim-treesitter/playground')
+  use('theprimeagen/harpoon')
+  use('mbbill/undotree')
+  use('tpope/vim-fugitive')
+
+  use {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v1.x',
+    requires = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},
+      {'williamboman/mason.nvim'},
+      {'williamboman/mason-lspconfig.nvim'},
+
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-path'},
+      {'saadparwaiz1/cmp_luasnip'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'hrsh7th/cmp-nvim-lua'},
+
+      -- Snippets
+      {'L3MON4D3/LuaSnip'},
+      {'rafamadriz/friendly-snippets'},
     }
+  }
 
-    -- Colorscheme section
-    use("gruvbox-community/gruvbox")
-    use("folke/tokyonight.nvim")
-
-    use("nvim-treesitter/nvim-treesitter", {
-        run = ":TSUpdate"
-    })
-
-    use("nvim-treesitter/playground")
-    use("romgrk/nvim-treesitter-context")
-
-    use("lewis6991/spellsitter.nvim")
-
-    use("mfussenegger/nvim-dap")
-    use("rcarriga/nvim-dap-ui")
-    use("theHamsta/nvim-dap-virtual-text")
-
+  use("folke/zen-mode.nvim")
+  use("github/copilot.vim")
 end)
-
