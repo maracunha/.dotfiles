@@ -5,19 +5,20 @@ lsp.preset('recommended')
 
 lsp.ensure_installed({
   'tsserver',
+  'eslint',
   'sumneko_lua',
   'rust_analyzer',
 })
 
 -- Fix Undefined global 'vim'
 lsp.configure('sumneko_lua', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      }
     }
+  }
 })
 
 local cmp = require('cmp')
@@ -37,13 +38,13 @@ lsp.setup_nvim_cmp({
 })
 
 lsp.set_preferences({
-    suggest_lsp_servers = false,
-    sign_icons = {
-        error = 'E',
-        warn = 'W',
-        hint = 'H',
-        info = 'I'
-    }
+  suggest_lsp_servers = false,
+  sign_icons = {
+    error = '✘',
+    warn = '▲',
+    hint = '⚑',
+    info = 'I'
+  }
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -60,9 +61,14 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 
--- add this mine here
+  -- add this mine here
   vim.keymap.set("n", "<leader>vi", function() vim.lsp.buf.implementation() end, opts)
   vim.keymap.set("n", "<leader>vf", function() vim.lsp.buf.format() end, opts)
 end)
 
 lsp.setup()
+
+-- Configure errors messagers
+vim.diagnostic.config({
+  virtual_text = true,
+})
