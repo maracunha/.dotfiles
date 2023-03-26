@@ -120,3 +120,4 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 alias luamake=/home/renan/personal/sumneko/3rd/luamake/luamake
 export PATH=~/.local/.npm-global/bin:$PATH
+. "$HOME/.cargo/env"
