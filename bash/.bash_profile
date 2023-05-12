@@ -1,19 +1,19 @@
 HOST_NAME=Renan
 
-source ~/.nvm/nvm.sh
+#source ~/.nvm/nvm.sh
 
 shopt -s autocd
 shopt -s histappend
 
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/.cargo/env
-export PATH="$PATH:/opt/yarn-[version]/bin"
+#export PATH="$PATH:/opt/yarn-[version]/bin"
 
 
 export HISTSIZE=5000
 export HISTFILESIZE=10000
 
-# To open fzf on my directory 
+# To open fzf on my directory
 bind -x '"\C-f": tmux-sessionizer'
 
 bind '"\e[A": history-search-backward'
@@ -75,10 +75,14 @@ alias chrome="open -a 'Google Chrome'"
 alias gss='git status -s'
 alias gs='echo ""; echo "*********************************************"; echo -e "   DO NOT FORGET TO PULL BEFORE COMMITTING"; echo "*********************************************"; echo ""; git status'
 
+
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
-. "$HOME/.cargo/env"
+# eval "$(/opt/homebrew/bin/brew shellenv)"
+# . "$HOME/.cargo/env"
+
+
+
