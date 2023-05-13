@@ -31,4 +31,4 @@ vim.opt.isfname:append("@-@")
 -- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "100"
+vim.opt.colorcolumn = "80"
