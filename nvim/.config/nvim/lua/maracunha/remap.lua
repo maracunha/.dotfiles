@@ -31,7 +31,9 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
-vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
+vim.keymap.set("n", "<leader>vp", "<cmd>silent !npx prettier --write %<CR>");
 
-vim.keymap.set("n", "<leader>vp", "<cmd>silent !prettier --write %<CR>");
+-- luaSnip
+vim.keymap.set("n", "<leader>sn", "<cmd>lua require('luasnip').jump(1)<Cr>")
+vim.keymap.set("n", "<leader>sp", "<cmd>lua require('luasnip').jump(-1)<Cr>")
+

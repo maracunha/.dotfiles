@@ -12,9 +12,14 @@ $ git clone --bare Hiplatform@vs-ssh.visualstudio.com:v3/Hiplatform/DT/static-ti
 ### Add remote tracking
 In the git config (simply repo/config in the case of a bare)
 
+# option from Prime.
 [remote "origin"]
   fetch = +refs/heads/*:refs/remotes/origin/*
 
+
+
+Other option
+ fecth = refs/heads/*:refs/heads/*
 
 * git worktree add [-f] [--detach] [--checkout] [--lock [--reason <string>]] [-b <new-branch>] <path> [<commit-ish>]
 $ git worktree add -b emergency-fix ../temp master

@@ -1,6 +1,6 @@
 HOST_NAME=Renan
 
-#source ~/.nvm/nvm.sh
+source ~/.nvm/nvm.sh
 
 shopt -s autocd
 shopt -s histappend
@@ -16,7 +16,10 @@ export HISTFILESIZE=10000
 # To open fzf on my directory
 bind -x '"\C-f": tmux-sessionizer'
 
+# Up arrow
 bind '"\e[A": history-search-backward'
+
+# Down Arrow
 bind '"\e[B": history-search-forward'
 
 export CLICOLOR=1
@@ -57,6 +60,7 @@ alias ll="ls -al" # List all files in current directory in long list format
 alias o="open ." # Open the current directory in Finder
 alias npm-flush='rm -rf ./node_modules && rm package-lock.json && npm i' # Clean npm modules and install again
 alias npm-global='npm list -g --depth 0' # Show all packages installed globally
+alias cats="cat package.json | grep script" # Show all scripts on package.json
 
 # ----------------------
 # Git Aliases
