@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+# export STOW_FOLDERS="bin,nvim,tmux,ubuntu,i3,bash"
+
+# STartMongo() {
+#     sudo systemctl start mongod
+#     sudo systemctl enable mongod
+# }
+
+# IncreaseWatchers() {
+#     sudo sysctl fs.inotify.max_user_watches=65536
+#     sudo sysctl -p
+# }
+
+addToPath() {
+    if [[ "$PATH" != *"$1"* ]]; then
+        export PATH=$PATH:$1
+    fi
+}
+
+addToPathFront() {
+    if [[ "$PATH" != *"$1"* ]]; then
+        export PATH=$1:$PATH
+    fi
+}
+
+ttest() {
+  mkdir -p -- "$1" &&
+    cd -P -- "$1"
+}
+
+create-branch() {
+git worktree add -b "fix_BG-$1_$2" "b-$2"
+
+cd "b-$2"
+
+cp .env.sample .env
+
+ln -n ../.rgignore .
+
+nvm use
+
+yarn
+}

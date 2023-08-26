@@ -1,6 +1,14 @@
 HOST_NAME=Renan
 
+set -o vi
+export XDG_CONFIG_HOME=$HOME/.config
+
+PERSONAL=$XDG_CONFIG_HOME
+
 source ~/.nvm/nvm.sh
+source $PERSONAL/env
+
+addToPathFront $HOME/.local/scripts
 
 shopt -s autocd
 shopt -s histappend
@@ -61,6 +69,7 @@ alias o="open ." # Open the current directory in Finder
 alias npm-flush='rm -rf ./node_modules && rm package-lock.json && npm i' # Clean npm modules and install again
 alias npm-global='npm list -g --depth 0' # Show all packages installed globally
 alias cats="cat package.json | grep script" # Show all scripts on package.json
+alias lb="ls -1d b-*" # List all directory start with b | that is for worktree branch
 
 # ----------------------
 # Git Aliases
@@ -89,4 +98,20 @@ export NVM_DIR="$HOME/.nvm"
 # . "$HOME/.cargo/env"
 
 
+# Default itens from bash
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
 
