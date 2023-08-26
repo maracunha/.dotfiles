@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+source $NVM_DIR/nvm.sh
+branch_type='feat'
+
+while getopts f:c: flag
+do
+    case "${flag}" in
+        f) branch_type='fix';;
+        c) branch_type='chore';;
+    esac
+done
+
+branch_number=$1
+branch_name=$2
+
+if [[ $1 == -f || $1 == -c ]]; then
+  branch_number=$2
+  branch_name=$3
+fi
+
+
+# Use this for debuging
+# set -x
+
+git worktree add -b ""$branch_type"_BG-"$branch_number"_"$branch_name"" "b-$branch_name"
+
+cd "b-$branch_name"
+
+cp .env.sample .env
+
+ln -n ../.rgignore .
+
+nvm use
+
+yarn
+
+echo "####   b-$branch_name ####"

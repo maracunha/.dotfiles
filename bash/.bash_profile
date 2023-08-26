@@ -13,7 +13,6 @@ addToPathFront $HOME/.local/scripts
 shopt -s autocd
 shopt -s histappend
 
-export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/.cargo/env
 #export PATH="$PATH:/opt/yarn-[version]/bin"
 
