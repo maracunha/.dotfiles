@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+addToPathFront $HOME/.local/scripts
+addToPathFront $HOME/.cargo/env
+#export PATH="$PATH:/opt/yarn-[version]/bin"
+

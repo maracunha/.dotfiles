@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+alias vim="nvim"
+alias c='code .'
+alias reveal-md="reveal-md --theme night --highlight-theme hybrid --port 1337"
+alias ns='npm start'
+alias nr='npm run'
+alias nis='npm i -S'
+alias l="ls -1" # List files in current directory
+alias ll="ls -al" # List all files in current directory in long list format
+alias o="open ." # Open the current directory in Finder
+alias npm-flush='rm -rf ./node_modules && rm package-lock.json && npm i' # Clean npm modules and install again
+alias npm-global='npm list -g --depth 0' # Show all packages installed globally
+alias cats="cat package.json | grep script" # Show all scripts on package.json
+alias lb="ls -1d b-*" # List all directory start with b | that is for worktree branch
+
+# ----------------------
+# Git Aliases
+# ----------------------
+alias ct='git describe --tags `git rev-list --tags --max-count=1`'
+alias ga='git add'
+alias gaa='git add .'
+alias gaaa='git add -A'
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gd='git diff'
+alias gl='git log'
+alias gp='git pull'
+alias gpsh='git push'
+alias chrome="open -a 'Google Chrome'"
+alias gss='git status -s'
+alias gs='echo ""; echo "*********************************************"; echo -e "   DO NOT FORGET TO PULL BEFORE COMMITTING"; echo "*********************************************"; echo ""; git status'
+
+alias rr='echo eeeeee'
