@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
   use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
   use('nvim-treesitter/playground')
   use('theprimeagen/harpoon')
+  use('thePrimeagen/git-worktree.nvim')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
 
@@ -50,7 +51,7 @@ return require('packer').startup(function(use)
     }
   }
 
-  use("folke/zen-mode.nvim")
+--  use("folke/zen-mode.nvim")
 --  use("github/copilot.vim")
 
   use("norcalli/nvim-colorizer.lua")
