@@ -5,7 +5,6 @@ end
 local _ = require("nvim-treesitter.configs").setup {
   ensure_installed = {
     "go",
-    "help",
     "html",
     "javascript",
     "json",
