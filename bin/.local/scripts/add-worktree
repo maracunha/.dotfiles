@@ -3,6 +3,12 @@
 source $NVM_DIR/nvm.sh
 branch_type='feat'
 
+if [[ -z $1 ]] || [[ -z $2 ]]; then
+  echo "Please provido a branch number an a branch_name"
+  echo "like this: add-worktree bla-123 Create-a-new-bla"
+  exit 0
+fi
+
 while getopts f:c: flag
 do
     case "${flag}" in
@@ -19,20 +25,20 @@ if [[ $1 == -f || $1 == -c ]]; then
   branch_name=$3
 fi
 
-
 # Use this for debuging
 # set -x
+git fetch
 
-git worktree add -b ""$branch_type"_BG-"$branch_number"_"$branch_name"" "b-$branch_name"
+branch_folder="b-"$branch_name"-"$branch_number""
+git worktree add -b ""$branch_type"_BG-"$branch_number"_"$branch_name"" "$branch_folder"
 
-cd "b-$branch_name"
+cd "$branch_folder"
 
-cp .env.sample .env
-
+# Using a custom .env
+# cp .env.sample .env
 ln -n ../.rgignore .
+ln -n ../.env .
 
 nvm use
 
 yarn
-
-echo "####   b-$branch_name ####"

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# tmux neww
+
+nvm use
+yarn start
+

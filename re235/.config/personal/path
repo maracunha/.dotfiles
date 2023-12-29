@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
+export GOPATH=$HOME/go
+
 addToPathFront $HOME/.local/scripts
 addToPathFront $HOME/.cargo/env
+addToPathFront $GOPATH/bin
 #export PATH="$PATH:/opt/yarn-[version]/bin"
+
 
