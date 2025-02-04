@@ -14,6 +14,8 @@ alias npm-global='npm list -g --depth 0' # Show all packages installed globally
 alias lb="ls -1d b-*" # List all directory start with b | that is for worktree branch
 alias sa="bat $HOME/.dotfiles/re235/.config/personal/alias"
 alias show-package="jq '.scripts' package.json"
+alias show-path="echo '${PATH//:/$'\n'}'"
+
 
 # ----------------------
 # Git Aliases
@@ -31,9 +33,36 @@ alias gpsh='git push'
 alias chrome="open -a 'Google Chrome'"
 alias gss='git status -s'
 alias gs='git status'
+alias open-chrome-cors='open -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
 
 # ----------------------
 # Tmux
 # ----------------------
 alias tnw='tmux neww'
 alias tk='tmux kill-server'
+
+# ----------------------
+# Docker | Podman
+# ----------------------
+#alias docker='podman'
+#alias docker-compose='podman compose'
+
+# ----------------------
+# Docker | AW
+# ----------------------
+alias aw-run='docker-compose \
+	--profile accesswire-api \
+	--profile accesswire-client-api \
+	--profile newsroom-api \
+	--profile accesswire-logging \
+    --profile accesswire-ui \
+	up'
+
+alias aw-back-run='docker-compose \
+	--profile accesswire-api \
+	--profile accesswire-client-api \
+	--profile newsroom-api \
+	--profile accesswire-logging \
+	up'
+
+alias b-aw-ui='docker-compose --profile accesswire-ui build'

@@ -33,3 +33,5 @@
   defaultBranch = main
 [includeIf "gitdir:~/work/"]
   path = ~/work/.gitconfig
+[rerere]
+	enabled = true

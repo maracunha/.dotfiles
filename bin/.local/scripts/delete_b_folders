@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Prompt the user to enter the maximum number for deletion
+read -p "Enter the maximum number for deletion (e.g., 2300): " max_number
+
+# Find the directories that start with "b-" and have a number less than the given number
+folders_to_delete=$(find . -maxdepth 1 -type d -name 'b-*' | awk -F '-' -v max="$max_number" '{ if ($NF < max && $NF != 000) print }')
+
+# If no folders match, inform the user and exit
+if [ -z "$folders_to_delete" ]; then
+  echo "No folders found with a number less than $max_number."
+  exit 0
+fi
+
+# Show the folders that will be deleted
+echo "The following folders will be deleted:"
+echo "$folders_to_delete"
+
+# Ask the user for confirmation
+read -p "Do you want to delete these folders? (yes/no): " answer
+
+# Handle the user's answer
+if [ "$answer" == "yes" ]; then
+  echo "$folders_to_delete" | xargs rm -r
+  # To clean up the worktree.
+  git worktree prune
+  echo "Folders deleted."
+else
+  echo "No folders were deleted."
+fi

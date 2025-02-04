@@ -4,7 +4,7 @@ source $NVM_DIR/nvm.sh
 branch_type='feat'
 
 if [[ -z $1 ]] || [[ -z $2 ]]; then
-  echo "Please provido a branch number an a branch_name"
+  echo "Please provide a branch number an a branch_name"
   echo "like this: add-worktree bla-123 Create-a-new-bla"
   exit 0
 fi
@@ -27,18 +27,28 @@ fi
 
 # Use this for debuging
 # set -x
+#
+# To get the latest on alfa, We're use it on new branch
 git fetch
+cd alpha
+git pull
+cd ..
 
 branch_folder="b-"$branch_name"-"$branch_number""
-git worktree add -b ""$branch_type"_BG-"$branch_number"_"$branch_name"" "$branch_folder"
+git worktree add -b ""$branch_type"/AWP-"$branch_number"_"$branch_name"" "$branch_folder"
 
 cd "$branch_folder"
 
 # Using a custom .env
 # cp .env.sample .env
-ln -n ../.rgignore .
-ln -n ../.env .
 
-nvm use
+# Install the dependencies checking folder name
+DIR_NAME=$(basename $(dirname $(pwd)))
 
-yarn
+if [[ $DIR_NAME == "accesswire-ui" ]]; then
+  echo "You are in the accesswire-ui, need to install legacy-peer-deps"
+  npm install --legacy-peer-deps
+  exit 0
+fi
+
+npm install
