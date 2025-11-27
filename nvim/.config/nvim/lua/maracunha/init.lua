@@ -1,6 +1,6 @@
 require("maracunha.set")
 require("maracunha.remap")
---require("maracunha.packer")
+require("maracunha.lazy")
 
 local augroup = vim.api.nvim_create_augroup
 local MaracunhaGroup = augroup('Maracunha', {})
@@ -24,7 +24,7 @@ autocmd('TextYankPost', {
     end,
 })
 
-autocmd({"BufWritePre"}, {
+autocmd({ "BufWritePre" }, {
     group = MaracunhaGroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
@@ -32,3 +32,6 @@ autocmd({"BufWritePre"}, {
 
 
 vim.g.netrw_winsize = 25
+
+-- LSP enable
+vim.lsp.enable('luals')

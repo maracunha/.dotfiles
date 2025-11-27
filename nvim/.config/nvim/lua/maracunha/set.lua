@@ -1,34 +1,41 @@
-vim.opt.nu = true
-vim.opt.relativenumber = true
+-- ========================================================================= --
+-- ==                          EDITOR SETTINGS                            == --
+-- ========================================================================= --
 
-vim.opt.errorbells = false
+vim.o.nu = true
+vim.o.relativenumber = true
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+vim.o.errorbells = false
 
-vim.opt.smartindent = true
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
 
-vim.opt.wrap = false
+vim.o.smartindent = true
 
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
+vim.o.wrap = false
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+vim.o.swapfile = false
+vim.o.backup = false
+vim.o.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.o.undofile = true
 
-vim.opt.termguicolors = true
+vim.o.hlsearch = false
+vim.o.incsearch = true
 
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
+vim.o.termguicolors = true
+
+vim.o.scrolloff = 8
+vim.o.signcolumn = "yes"
+
+-- Ensure the literal `@` character is recognized as part of a filename by
+-- commands like `gf` (goto file)
 vim.opt.isfname:append("@-@")
 
 -- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-vim.opt.updatetime = 50
+vim.o.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+vim.o.colorcolumn = "80"
 
-vim.opt.spelllang = "en_us"
+vim.o.spelllang = "en_us"
