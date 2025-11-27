@@ -68,12 +68,19 @@ fi
 # export DOCKER_HOST=unix://Users/dbservices-renan/.local/share/containers/podman/machine/qemu/podman.sock
 
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/dbservices-renan/work/cloud/google-cloud-sdk/path.bash.inc' ]; then . '/Users/dbservices-renan/work/cloud/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/dbservices-renan/work/cloud/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/dbservices-renan/work/cloud/google-cloud-sdk/completion.bash.inc'; fi
-
 # For compilers to find ruby you may need to set
 export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+
+. "$HOME/.local/bin/env"
+
+# Pyenv configuration
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/dbservices-renan/personal/gcp/google-cloud-sdk/path.bash.inc' ]; then . '/Users/dbservices-renan/personal/gcp/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/dbservices-renan/personal/gcp/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/dbservices-renan/personal/gcp/google-cloud-sdk/completion.bash.inc'; fi

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Define the assets directory and source code directory
+ASSETS_DIR="./src/assets"
+SOURCE_DIR="./src"
+
+# Loop through each asset file
+find "$ASSETS_DIR" -type f | while read -r asset; do
+  # Extract the relative path of the asset
+  asset_name=$(basename "$asset")
+
+  # Search for occurrences of the asset in the source code
+  usage_count=$(grep -rl "$asset_name" "$SOURCE_DIR" | wc -l)
+
+  # Check if the asset is used
+  if [ "$usage_count" -gt 0 ]; then
+    echo "Asset '$asset_name' is used."
+  else
+    echo "Asset '$asset_name' is NOT used. Deleting..."
+    rm "$asset"
+  fi
+done

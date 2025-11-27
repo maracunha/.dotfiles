@@ -1,6 +1,6 @@
 require("maracunha.set")
 require("maracunha.remap")
-require("maracunha.packer")
+--require("maracunha.packer")
 
 local augroup = vim.api.nvim_create_augroup
 local MaracunhaGroup = augroup('Maracunha', {})

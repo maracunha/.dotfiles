@@ -5,13 +5,13 @@ local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
 lsp.ensure_installed({
-    'tsserver',
     'eslint',
     'rust_analyzer',
     'lua_ls',
     'tailwindcss',
     'emmet_ls',
     'html',
+    'cssls',
 })
 
 -- Fix Undefined global 'vim'
@@ -80,6 +80,51 @@ lsp.setup_servers({
     },
 })
 
+lsp.configure('html', {
+    settings = {
+        html = {
+            format = {
+                unformatted = "wbr",
+                contentUnformatted = "pre,code,textarea",
+                indentInnerHtml = false,
+                preserveNewLines = true,
+                maxPreserveNewLines = 1,
+                indentHandlebars = false,
+                endWithNewline = true,
+                extraLiners = "head, body, /html",
+                wrapAttributes = "auto",
+                templating = true,
+                unformattedContentDelimiter = "",
+            }
+        }
+    }
+})
+
+lsp.configure('cssls', {
+    settings = {
+        css = {
+            validate = true,
+            lint = {
+                unknownAtRules = 'ignore',
+            },
+            format = {
+                enable = true,
+                options = {
+                    indentStyle = 'space',
+                    indentSize = 4,
+                    insertSpaces = true,
+                    tabSize = 4,
+                    newlineBetweenRules = true,
+                    newlineBetweenSelectors = true,
+                    spaceAroundSelectorSeparator = true,
+                    braceStyle = "collapse",
+                    maxPreserveNewLines = 1,
+                    preserveNewLines = true,
+                }
+            }
+        }
+    }
+})
 
 -- Configure errors messagers
 vim.diagnostic.config({

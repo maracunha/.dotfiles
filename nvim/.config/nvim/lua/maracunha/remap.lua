@@ -33,7 +33,7 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
-vim.keymap.set("n", "<leader>vp", "<cmd>silent !npx prettier --write %<CR>");
+vim.keymap.set("n", "<leader>vp", ":w<CR><cmd>silent !npx prettier --write %<CR>");
 
 -- luaSnip
 vim.keymap.set("n", "<leader>sn", "<cmd>lua require('luasnip').jump(1)<Cr>")

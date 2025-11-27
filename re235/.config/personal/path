@@ -6,7 +6,9 @@ export ASPNETCORE_ENVIRONMENT=Development
 
 addToPath $HOME/dotnet
 addToPathFront $HOME/.local/scripts
+addToPathFront $HOME/.pyenv/bin
 addToPathFront $HOME/.cargo/env
 addToPathFront $GOPATH/bin
 addToPathFront /opt/homebrew/opt/ruby/bin
+
 #export PATH="$PATH:/opt/yarn-[version]/bin"

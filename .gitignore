@@ -1,4 +1,6 @@
 nvim/.config/nvim/plugin/packer_compiled.lua
 nvim/.config/nvim/pack/
 
+re235/.config/personal/keys
+
 .DS_Store

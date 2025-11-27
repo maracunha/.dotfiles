@@ -47,7 +47,7 @@ DIR_NAME=$(basename $(dirname $(pwd)))
 
 if [[ $DIR_NAME == "accesswire-ui" ]]; then
   echo "You are in the accesswire-ui, need to install legacy-peer-deps"
-  npm install --legacy-peer-deps
+  npm install
   exit 0
 fi
 

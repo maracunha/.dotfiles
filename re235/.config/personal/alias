@@ -16,6 +16,13 @@ alias sa="bat $HOME/.dotfiles/re235/.config/personal/alias"
 alias show-package="jq '.scripts' package.json"
 alias show-path="echo '${PATH//:/$'\n'}'"
 
+# Search for files by name pattern (case-insensitive), excluding node_modules directories
+# Usage: fw <pattern>
+# Example: fw config  ->  finds CONFIG.json, app.config.ts, etc.
+alias fw='f() { find . -type d -name "node_modules" -prune -o -type f -iname "*$1*" -print; }; f'
+
+alias open-chrome-cors='open -a /Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
+alias open-chrome-cors-v1='open -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
 
 # ----------------------
 # Git Aliases
@@ -33,36 +40,15 @@ alias gpsh='git push'
 alias chrome="open -a 'Google Chrome'"
 alias gss='git status -s'
 alias gs='git status'
-alias open-chrome-cors='open -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
+
+# ----------------------
+# Python
+# ----------------------
+#alias python='python3'
+alias pip='pip3'
 
 # ----------------------
 # Tmux
 # ----------------------
 alias tnw='tmux neww'
 alias tk='tmux kill-server'
-
-# ----------------------
-# Docker | Podman
-# ----------------------
-#alias docker='podman'
-#alias docker-compose='podman compose'
-
-# ----------------------
-# Docker | AW
-# ----------------------
-alias aw-run='docker-compose \
-	--profile accesswire-api \
-	--profile accesswire-client-api \
-	--profile newsroom-api \
-	--profile accesswire-logging \
-    --profile accesswire-ui \
-	up'
-
-alias aw-back-run='docker-compose \
-	--profile accesswire-api \
-	--profile accesswire-client-api \
-	--profile newsroom-api \
-	--profile accesswire-logging \
-	up'
-
-alias b-aw-ui='docker-compose --profile accesswire-ui build'
