@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 export GOPATH=$HOME/go
-export DOTNET_ROOT=$HOME/dotnet
+export DOTNET_ROOT=/opt/homebrew/opt/dotnet
 export ASPNETCORE_ENVIRONMENT=Development
 
 addToPath $HOME/dotnet
@@ -9,6 +9,9 @@ addToPathFront $HOME/.local/scripts
 addToPathFront $HOME/.pyenv/bin
 addToPathFront $HOME/.cargo/env
 addToPathFront $GOPATH/bin
+addToPathFront $DOTNET_ROOT/libexec
+addToPathFront $HOME/.dotnet/tools
 addToPathFront /opt/homebrew/opt/ruby/bin
+addToPathFront $HOME/.rokit/bin
 
 #export PATH="$PATH:/opt/yarn-[version]/bin"
