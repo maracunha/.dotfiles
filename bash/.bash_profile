@@ -88,3 +88,10 @@ if [ -f '/Users/dbservices-renan/personal/gcp/google-cloud-sdk/completion.bash.i
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+# Load Mise and Ruby
+eval "$(mise activate bash)"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

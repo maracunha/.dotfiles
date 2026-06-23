@@ -13,5 +13,7 @@ addToPathFront $DOTNET_ROOT/libexec
 addToPathFront $HOME/.dotnet/tools
 addToPathFront /opt/homebrew/opt/ruby/bin
 addToPathFront $HOME/.rokit/bin
+addToPathFront $HOME/.bun/bin
+
 
 #export PATH="$PATH:/opt/yarn-[version]/bin"

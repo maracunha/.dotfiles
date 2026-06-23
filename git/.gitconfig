@@ -11,6 +11,7 @@
   interactive = always
   status = always
   branch = always
+	ui = auto
 [alias]
   st = status
   ci = commit
