@@ -80,11 +80,10 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/dbservices-renan/personal/gcp/google-cloud-sdk/path.bash.inc' ]; then . '/Users/dbservices-renan/personal/gcp/google-cloud-sdk/path.bash.inc'; fi
+if [ -f '/$HOME/personal/gcp/google-cloud-sdk/path.bash.inc' ]; then . '/$HOME/personal/gcp/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/dbservices-renan/personal/gcp/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/dbservices-renan/personal/gcp/google-cloud-sdk/completion.bash.inc'; fi
-
+if [ -f '/$HOME/personal/gcp/google-cloud-sdk/completion.bash.inc' ]; then . '/$HOME/personal/gcp/google-cloud-sdk/completion.bash.inc'; fi
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
